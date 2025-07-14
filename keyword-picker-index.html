@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개념 키워드 랜덤 추첨 - 대진여자고등학교</title>
+  <style>
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffe0f0, #ffd6e8);
+    }
+    h1 {
+      margin-bottom: 1.2rem;
+      color: #d63384;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .result {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      background-color: #fff0f5;
+      color: #6b2f5b;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 대진여자고등학교 🌸<br>랜덤 개념 키워드 추첨 결과</h1>
+  <div class="result" id="result"></div>
+
+  <script>
+    const keywords = [
+      "자기주도 (Self-direction)",
+      "공동체 (Community)",
+      "책임 (Responsibility)",
+      "정의 (Justice)",
+      "다양성 (Diversity)",
+      "창의성 (Creativity)",
+      "비판적 사고 (Critical Thinking)",
+      "탐구 (Inquiry)",
+      "변화 (Change)",
+      "지속가능성 (Sustainability)",
+      "융합 (Integration)",
+      "소통 (Communication)",
+      "정체성 (Identity)",
+      "기술 (Technology)",
+      "불확실성 (Uncertainty)",
+      "참여 (Engagement)"
+    ];
+
+    function pickKeywords() {
+      const shuffled = keywords.sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 2);
+      document.getElementById('result').innerText = `오늘의 키워드는\n\n🎀 ${selected[0]}\n🎀 ${selected[1]}`;
+    }
+
+    // 페이지 로딩 시 자동 실행
+    window.onload = pickKeywords;
+  </script>
+</body>
+</html>
